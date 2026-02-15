@@ -1,0 +1,15 @@
+[package]
+name = "engine-replay"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Write-ahead log, snapshots, and deterministic replay/recovery."
+
+[dependencies]
+engine-types = { workspace = true }
+engine-core = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+bincode = { workspace = true }
+thiserror = { workspace = true }

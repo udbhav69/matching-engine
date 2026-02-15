@@ -1,0 +1,40 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/engine-types",
+    "crates/engine-core",
+    "crates/engine-feed",
+    "crates/engine-replay",
+    "crates/engine-gateway",
+    "crates/bench",
+    "crates/sim",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "MIT"
+
+[workspace.dependencies]
+engine-types = { path = "crates/engine-types" }
+engine-core = { path = "crates/engine-core" }
+engine-feed = { path = "crates/engine-feed" }
+engine-replay = { path = "crates/engine-replay" }
+engine-gateway = { path = "crates/engine-gateway" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+bincode = "1"
+thiserror = "2"
+criterion = { version = "0.5", features = ["html_reports"] }
+proptest = "1"
+rand = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[profile.bench]
+inherits = "release"
+debug = true

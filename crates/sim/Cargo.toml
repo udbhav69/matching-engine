@@ -1,0 +1,15 @@
+[package]
+name = "engine-sim"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Simulation harness for mixed order flow with event printing."
+
+[dependencies]
+engine-types = { workspace = true }
+engine-core = { workspace = true }
+engine-feed = { workspace = true }
+engine-gateway = { workspace = true }
+engine-replay = { workspace = true }
+rand = { workspace = true }
